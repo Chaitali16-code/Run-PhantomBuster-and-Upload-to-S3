@@ -57,7 +57,7 @@ jobs:
             const s3 = new AWS.S3({ accessKeyId, secretAccessKey });
             await s3.upload({
               Bucket: bucketName,
-              Key: 'phantom-data/phantom_output_${Date.now()}.json',
+              Key: 'LinkedIn_Data/phantom_output_${Date.now()}.json',
               Body: output,
               ContentType: "application/json"
             }).promise();
