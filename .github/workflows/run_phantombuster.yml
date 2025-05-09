@@ -47,7 +47,7 @@ jobs:
             await new Promise(r => setTimeout(r, 20000));
 
             const resultRes = await axios.get(
-              https://api.phantombuster.com/api/v2/containers/fetch-output?id=${containerId},
+              'https://api.phantombuster.com/api/v2/containers/fetch-output?id=${containerId}',
               { headers: { 'X-Phantombuster-Key-1': apiKey } }
             );
             const output = JSON.stringify(resultRes.data, null, 2);
@@ -57,7 +57,7 @@ jobs:
             const s3 = new AWS.S3({ accessKeyId, secretAccessKey });
             await s3.upload({
               Bucket: bucketName,
-              Key: phantom-data/phantom_output_${Date.now()}.json,
+              Key: 'phantom-data/phantom_output_${Date.now()}.json',
               Body: output,
               ContentType: "application/json"
             }).promise();
