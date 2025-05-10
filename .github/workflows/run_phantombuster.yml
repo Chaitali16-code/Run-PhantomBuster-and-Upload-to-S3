@@ -53,6 +53,8 @@ jobs:
             const output = JSON.stringify(resultRes.data, null, 2);
             fs.writeFileSync("phantom_output.json", output);
             console.log("✅ Output saved locally: phantom_output.json");
+            console.log("✅ saved phantom output", phantom_output.json);
+
 
             const s3 = new AWS.S3({ accessKeyId, secretAccessKey });
             await s3.upload({
