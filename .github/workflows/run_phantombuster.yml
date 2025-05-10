@@ -53,7 +53,9 @@ jobs:
             const output = JSON.stringify(resultRes.data, null, 2);
             fs.writeFileSync("phantom_output.json", output);
             console.log("✅ Output saved locally: phantom_output.json");
-            console.log("✅ saved phantom output", phantom_output.json);
+            // Read and log the saved content
+            const savedOutput = fs.readFileSync("phantom_output.json", "utf8");
+            console.log("📄 Contents of phantom_output.json:\n", savedOutput);
 
 
             const s3 = new AWS.S3({ accessKeyId, secretAccessKey });
