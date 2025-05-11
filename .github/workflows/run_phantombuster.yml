@@ -44,7 +44,7 @@ jobs:
             console.log("🚀 Launched agent with container ID:", containerId);
 
             // wait for the job to finish
-            await new Promise(r => setTimeout(r, 20000));
+            await new Promise(r => setTimeout(r, 120000));
 
             const resultRes = await axios.get(
               `https://api.phantombuster.com/api/v2/containers/fetch-output?id=${containerId}`,
